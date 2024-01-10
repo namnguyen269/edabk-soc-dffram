@@ -1,0 +1,100 @@
+{
+    "DESIGN_NAME":"synapse_matrix_design",
+    "DESIGN_IS_CORE": 1,
+    "ROUTING_CORES": 16,
+    "VERILOG_FILES": [
+        "dir::../../verilog/neuron_core_dffram/synapse_matrix_design.v"
+    ],
+    "CLOCK_PERIOD": 16.5,
+    "CLOCK_PORT": "wb_clk_i",
+    "CLOCK_NET": "sram0.CLK",
+    "FP_PDN_MACRO_HOOKS": "sram0 VPWR VGND VPWR VGND",
+    "FP_TAP_HORIZONTAL_HALO":20,
+    "FP_TAP_VERTICAL_HALO":20,
+    "FP_PDN_HORIZONTAL_HALO":20,
+    "FP_PDN_VERTICAL_HALO":20,
+    "FP_PDN_HSPACING":30,
+    "FP_PDN_VSPACING":30,
+    "FP_PDN_CORE_RING":1,
+    "FP_PDN_CORE_RING_VWIDTH":5, 
+    "FP_PDN_CORE_RING_HWIDTH":5,
+    "FP_PDN_CORE_RING_VOFFSET":14,
+    "FP_PDN_CORE_RING_VSPACING":1,
+    "FP_PDN_VWIDTH":5,
+    "MACRO_PLACEMENT_CFG": "dir::macro.cfg",
+    "VERILOG_FILES_BLACKBOX": [
+        "dir::../../verilog/gl/RAM256.v"
+
+    ],
+    "EXTRA_LEFS": "dir::../../lef/RAM256.lef",
+    "EXTRA_GDS_FILES": "dir::../../gds/RAM256.gds",
+    "EXTRA_LIBS": [
+     "dir::../../lib/RAM256.lib"
+    
+     ],
+    "EXTRA_SPEFS": [
+        "RAM256", 
+        "dir::../../spef/RAM256.max.spef", 
+        "dir::../../spef/RAM256.min.spef", 
+        "dir::../../spef/RAM256.nom.spef"
+    ],
+    
+    "FP_SIZING": "absolute",
+    "RUN_LINTER": 0,
+    "DIE_AREA": "0 0 2000 2000 ",
+    "MAX_TRANSITION_CONSTRAINT": 1.0,
+    "MAX_FANOUT_CONSTRAINT": 16,
+    "PL_TARGET_DENSITY": 0.1,
+    "PL_RESIZER_SETUP_SLACK_MARGIN": 0.4,
+    "GLB_RESIZER_SETUP_SLACK_MARGIN": 0.2,
+    "GLB_RESIZER_HOLD_SLACK_MARGIN": 0.2,
+    "PL_RESIZER_HOLD_SLACK_MARGIN": 0.4,
+    "PL_RESIZER_SETUP_MAX_BUFFER_PERCENT": 50, 
+    "GLB_RESIZER_SETUP_MAX_BUFFER_PERCENT": 50,
+    "MAGIC_DEF_LABELS": 0,
+    "SYNTH_BUFFERING": 0,
+    "RUN_HEURISTIC_DIODE_INSERTION": 1,
+    "FP_PDN_HPITCH":180,
+    "FP_PDN_VPITCH":180,
+    "GRT_ADJUSTMENT": 0.1,
+    "PL_ROUTABILITY_DRIVEN": 1,
+
+    "VDD_NETS": [
+        "VPWR"
+    ],
+    "GND_NETS": [
+        "VGND"
+    ],
+    "SYNTH_USE_PG_PINS_DEFINES": "USE_POWER_PINS",
+    "IO_SYNC": 0,
+    "BASE_SDC_FILE": "dir::base_synapse_matrix_design.sdc",
+    "RUN_CVC": 1,
+    "pdk::sky130*": {
+        "FP_CORE_UTIL": 10,
+        "RT_MAX_LAYER": "met5",
+        "scl::sky130_fd_sc_hd": {
+            "CLOCK_PERIOD": 16.5
+        },
+        "scl::sky130_fd_sc_hdll": {
+            "CLOCK_PERIOD": 10
+        },
+        "scl::sky130_fd_sc_hs": {
+            "CLOCK_PERIOD": 8
+        },
+        "scl::sky130_fd_sc_ls": {
+            "CLOCK_PERIOD": 10,
+            "SYNTH_MAX_FANOUT": 5
+        },
+        "scl::sky130_fd_sc_ms": {
+            "CLOCK_PERIOD": 10
+        }
+    },
+    "pdk::gf180mcuC": {
+        "STD_CELL_LIBRARY": "gf180mcu_fd_sc_mcu7t5v0",
+        "CLOCK_PERIOD": 24.0,
+        "FP_CORE_UTIL": 40,
+        "RT_MAX_LAYER": "Metal4",
+        "SYNTH_MAX_FANOUT": 4,
+        "PL_TARGET_DENSITY": 0.45
+    }
+}

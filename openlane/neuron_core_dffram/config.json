@@ -1,0 +1,104 @@
+{
+    "DESIGN_NAME": "neuron_core_dffram",
+    "DESIGN_IS_CORE": 1,
+    "ROUTING_CORES": 1,
+    "VERILOG_FILES": [
+        "dir::../../verilog/neuron_core_dffram/neuron_core_dffram.v",
+        "dir::../../verilog/neuron_core_dffram/neuron_block_design.v",
+        "dir::../../verilog/neuron_core_dffram/neuron_parameters_design.v",
+        "dir::../../verilog/neuron_core_dffram/neuron_spike_out_design.v",
+        "dir::../../verilog/neuron_core_dffram/AddressDecoder.v"
+    ],
+    "CLOCK_PERIOD": 16.5,
+    "CLOCK_PORT": "wb_clk_i",
+    "CLOCK_NET": "sm.wb_clk_i",
+    "FP_PDN_MACRO_HOOKS": "sm VPWR VGND VPWR VGND",
+    "MACRO_PLACEMENT_CFG": "dir::macro.cfg",
+    "FP_TAP_HORIZONTAL_HALO":20,
+    "FP_TAP_VERTICAL_HALO":20,
+    "FP_PDN_HORIZONTAL_HALO":20,
+    "FP_PDN_VERTICAL_HALO":20,
+    "FP_PDN_HSPACING":30,
+    "FP_PDN_VSPACING":30,
+    "FP_PDN_CORE_RING":1,
+    "FP_PDN_CORE_RING_VWIDTH":5, 
+    "FP_PDN_CORE_RING_HWIDTH":5,
+    "FP_PDN_CORE_RING_VOFFSET":14,
+    "FP_PDN_CORE_RING_VSPACING":1,
+    "FP_PDN_VWIDTH":5, 
+  
+    "PL_RESIZER_SETUP_MAX_BUFFER_PERCENT": 50, 
+    "GLB_RESIZER_SETUP_MAX_BUFFER_PERCENT": 50,
+   
+
+    "VERILOG_FILES_BLACKBOX": [
+        "dir::../../verilog/gl/synapse_matrix_design.v"
+    ],
+    "EXTRA_LEFS": "dir::../../lef/synapse_matrix_design.lef",
+    "EXTRA_GDS_FILES": "dir::../../gds/synapse_matrix_design.gds",
+    "EXTRA_LIBS": "dir::../../lib/synapse_matrix_design.lib",
+    "EXTRA_SPEFS": [
+        "synapse_matrix_design", 
+        "dir::../../spef/multicorner/synapse_matrix_design.max.spef", 
+        "dir::../../spef/multicorner/synapse_matrix_design.min.spef", 
+        "dir::../../spef/multicorner/synapse_matrix_design.nom.spef"
+    ],
+    "FP_SIZING": "absolute",
+    "DIE_AREA": "0 0 2700 2700",
+    "MAX_TRANSITION_CONSTRAINT": 1.0,
+    "MAX_FANOUT_CONSTRAINT": 16,
+    "PL_TARGET_DENSITY": 0.3,
+    "PL_RESIZER_SETUP_SLACK_MARGIN": 0.4,
+    "GLB_RESIZER_SETUP_SLACK_MARGIN": 0.2,
+    "GLB_RESIZER_HOLD_SLACK_MARGIN": 0.2,
+    "PL_RESIZER_HOLD_SLACK_MARGIN": 0.4,
+    "FP_PDN_HPITCH":200,
+    
+    "MAGIC_DEF_LABELS": 0,
+    "SYNTH_BUFFERING": 1,
+    "RUN_LINTER": 0,
+    "RUN_HEURISTIC_DIODE_INSERTION": 1,
+    "GRT_REPAIR_ANTENNAS,":1,
+    "DIODE_ON_PORTS,":1,
+    "PL_ROUTABILITY_DRIVEN": 1,
+    "FP_PDN_IRDROP":1,
+    "QUIT_ON_MAGIC_DRC":0,
+    "SYNTH_USE_PG_PINS_DEFINES": "USE_POWER_PINS",
+    "VDD_NETS": [
+        "VPWR"
+    ],
+    "GND_NETS": [
+        "VGND"
+    ],
+    "IO_SYNC": 0,
+    "BASE_SDC_FILE": "dir::base_neuron_core.sdc",
+    "RUN_CVC": 1,
+    "pdk::sky130*": {
+        "FP_CORE_UTIL": 30,
+        "RT_MAX_LAYER": "met5",
+        "scl::sky130_fd_sc_hd": {
+            "CLOCK_PERIOD": 16.5
+        },
+        "scl::sky130_fd_sc_hdll": {
+            "CLOCK_PERIOD": 10
+        },
+        "scl::sky130_fd_sc_hs": {
+            "CLOCK_PERIOD": 8
+        },
+        "scl::sky130_fd_sc_ls": {
+            "CLOCK_PERIOD": 10,
+            "SYNTH_MAX_FANOUT": 5
+        },
+        "scl::sky130_fd_sc_ms": {
+            "CLOCK_PERIOD": 10
+        }
+    },
+    "pdk::gf180mcuC": {
+        "STD_CELL_LIBRARY": "gf180mcu_fd_sc_mcu7t5v0",
+        "CLOCK_PERIOD": 24.0,
+        "FP_CORE_UTIL": 40,
+        "RT_MAX_LAYER": "Metal4",
+        "SYNTH_MAX_FANOUT": 4,
+        "PL_TARGET_DENSITY": 0.45
+    }
+}
